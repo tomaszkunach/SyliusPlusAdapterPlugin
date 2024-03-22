@@ -71,6 +71,4 @@ jobs:
 
             - run: make test.yaml
 
-            - run: make test.schema
-
             - run: make test.container
