@@ -84,8 +84,8 @@ final class FilteredChannelChoiceTypeExtension extends AbstractTypeExtension
                 return;
             }
 
-            // In case of multiple channels and  channel restriction, we need to save the channels that are not available
-            // To avoid loosing them when saving the form
+            // In case of multiple channels and channel restriction, we need to save the channels that are not available
+            // To avoid losing them when saving the form
             $form = $event->getForm();
             /** @var array $availableChannels */
             $availableChannels = $form->get(self::CHANNELS)->getConfig()->getOptions()['choices'] ?? [];
