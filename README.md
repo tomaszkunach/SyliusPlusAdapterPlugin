@@ -1,6 +1,6 @@
 # Sylius Plus Adapter Plugin
 
-This plugin offer tools to adapt your plugins to Sylius Plus ACL system. 
+This plugin offer tools to adapt your plugins to Sylius Plus RBAC system. 
 
 There is no point in installing this plugin directly on Sylius Plus app at this time. 
 
@@ -37,9 +37,9 @@ sylius_resource:
 
 ### Add permissions on routes
 
-It's a Sylius native feature, you don't have to install this plugin !   
+It's a Sylius native feature, you don't have to install this plugin!   
 You just have to add `permission: true` on your route definition.    
-If you do this, your route will decame available on the permission tree. 
+If you do this, your route will become available on the permission tree. 
 
 #### Example
 
@@ -127,7 +127,7 @@ class FooSyliusBarPluginExtension extends Extension implements PrependExtensionI
             $container,
             'foo_bar_my_resource', // This is the grid name
             '%foo_bar.model.my_resource.class%', // This is the resource class as in your original grid
-            "expr:service('foo_bar.repository.my_resource').createListQueryBuilder('%locale%')" // This is the original query builder but as an expression call
+            "expr:service('foo_bar.repository.my_resource').createListQueryBuilder('%locale%')" // This is the original query builder but called as an expression
         );
     }
 }
@@ -139,7 +139,7 @@ To filter the channel choice type with channel restriction, you need to include 
 
 #### Example
 
-***Your current resource forme type***
+***Your current resource form type***
 ```php
 namespace Foo\SyliusBarPlugin\Form\Type;
 
@@ -190,10 +190,10 @@ class FooSyliusBarPluginExtension extends Extension implements PrependExtensionI
 ## Development
 
 Because this plugin is a kind of sidekick for your plugins, it's not intended to be used in a standalone project.   
-Even more because it requires Sylius Plus to be useful. Our traditionnal test application then seems useless.
+Even more because it requires Sylius Plus to be useful. Our traditional test application then seems useless.
 
 But to be fair, we still added a test app with our CMS plugin installed and configured to use the `SyliusPlusCompatibilityTrait` trait.   
-It would be useful to be sure that everything is working as expected in a normal Sylius event if this plugin is installed and used.
+It would be useful to be sure that everything is working as expected in a normal Sylius even if this plugin is installed and used.
 
 ## License
 
