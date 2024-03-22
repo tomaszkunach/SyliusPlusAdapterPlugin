@@ -26,7 +26,7 @@ trait SyliusPlusCompatibilityTrait
             return;
         }
 
-        // For each type with a channel choice list to filter we crate a "virtual" type extension based on the FilteredChannelChoiceTypeExtension
+        // For each type with a channel choice list to filter we create a "virtual" type extension based on the FilteredChannelChoiceTypeExtension
         // class to override channel(s) fields of original types.
         foreach ($extendables as $code => $type) {
             $container->setDefinition(
@@ -71,14 +71,14 @@ trait SyliusPlusCompatibilityTrait
             return;
         }
 
-        // Add alias because class name in `expr:service` seems not working
+        // Add alias because class name in `expr:service` seems to not work
         $container->setAlias(
             'monsieurbiz_cms_page.sylius_plus_adapter.channel_restricted_query_builder',
             ChannelRestrictionQueryBuilderInterface::class
         )->setPublic(true);
 
         // Override grid repository method to use a kind of decorator around the original query builder to add
-        // channel restritions if needed.
+        // channel restrictions if needed.
         $container->loadFromExtension('sylius_grid', [
             'grids' => [$grid => ['driver' => ['options' => [
                 'class' => $class,

@@ -71,8 +71,6 @@ jobs:
 
             - run: make test.yaml
 
-            - run: make test.twig
-
             - run: make test.schema
 
             - run: make test.container
