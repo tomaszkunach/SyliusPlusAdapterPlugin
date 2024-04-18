@@ -30,7 +30,7 @@ trait SyliusPlusCompatibilityTrait
         // class to override channel(s) fields of original types.
         foreach ($extendables as $code => $type) {
             $container->setDefinition(
-                'monsieurbiz_cms_page.sylius_plus_adapter.form_extension.filtered_channel_choice_type.' . $code,
+                'monsieurbiz_sylius_plus_adapter.form_extension.filtered_channel_choice_type.' . $code,
                 (new Definition(FilteredChannelChoiceTypeExtension::class))
                     ->setAutowired(true)
                     ->addMethodCall('addExtendedType', [$type])
@@ -73,7 +73,7 @@ trait SyliusPlusCompatibilityTrait
 
         // Add alias because class name in `expr:service` seems to not work
         $container->setAlias(
-            'monsieurbiz_cms_page.sylius_plus_adapter.channel_restricted_query_builder',
+            'monsieurbiz_sylius_plus_adapter.channel_restricted_query_builder',
             ChannelRestrictionQueryBuilderInterface::class
         )->setPublic(true);
 
@@ -84,7 +84,7 @@ trait SyliusPlusCompatibilityTrait
                 'class' => $class,
                 'repository' => [
                     'method' => [
-                        "expr:service('monsieurbiz_cms_page.sylius_plus_adapter.channel_restricted_query_builder')",
+                        "expr:service('monsieurbiz_sylius_plus_adapter.channel_restricted_query_builder')",
                         $hasMultipleChannels ? 'createForChannels' : 'createForChannel',
                     ],
                     'arguments' => [$originalQueryBuilderExpression],

@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace MonsieurBiz\SyliusPlusAdapterPlugin\Form\Extension;
 
-use DomainException;
 use Sylius\Bundle\ChannelBundle\Form\Type\ChannelChoiceType;
 use Sylius\Component\Channel\Model\ChannelsAwareInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
@@ -62,7 +61,7 @@ final class FilteredChannelChoiceTypeExtension extends AbstractTypeExtension
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if (false === $builder->has(self::CHANNELS) && false === $builder->has(self::CHANNEL)) {
-            throw new DomainException(sprintf('%s should always have channels field defined', self::$extendedTypes[0]));
+            return;
         }
 
         $code = false !== $builder->has(self::CHANNELS) ? self::CHANNELS : self::CHANNEL;
