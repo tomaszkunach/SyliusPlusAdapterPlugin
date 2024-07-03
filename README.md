@@ -1,10 +1,25 @@
-# Sylius Plus Adapter Plugin
+<h1 align="center">Sylius Plus Adapter Plugin</h1>
+
+[![Menu Plugin license](https://img.shields.io/github/license/monsieurbiz/SyliusPlusAdapterPlugin?public)](https://github.com/monsieurbiz/SyliusPlusAdapterPlugin/blob/master/LICENSE.txt)
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/monsieurbiz/SyliusPlusAdapterPlugin/tests.yaml?branch=master&logo=github)](https://github.com/monsieurbiz/SyliusPlusAdapterPlugin/actions?query=workflow%3ATests)
+[![Recipe Status](https://img.shields.io/github/actions/workflow/status/monsieurbiz/SyliusPlusAdapterPlugin/recipe.yaml?branch=master&label=recipes&logo=github)](https://github.com/monsieurbiz/SyliusPlusAdapterPlugin/actions?query=workflow%3ASecurity)
+[![Security Status](https://img.shields.io/github/actions/workflow/status/monsieurbiz/SyliusPlusAdapterPlugin/security.yaml?branch=master&label=security&logo=github)](https://github.com/monsieurbiz/SyliusPlusAdapterPlugin/actions?query=workflow%3ASecurity)
 
 This plugin offer tools to adapt your plugins to Sylius Plus RBAC system. 
 
-There is no point in installing this plugin directly on Sylius Plus app at this time. 
+## Compatibility
+
+| Sylius Version | PHP Version |
+|---|---|
+| 1.11 | 8.0 - 8.1 |
+| 1.12 | 8.1 - 8.2 |
+| 1.13 | 8.1 - 8.2 |
 
 ## Installation
+
+```bash
+composer config --no-plugins --json extra.symfony.endpoint '["https://api.github.com/repos/monsieurbiz/symfony-recipes/contents/index.json?ref=flex/master","flex://defaults"]'
+```
 
 ```bash
 composer require monsieurbiz/sylius-plus-adapter-plugin
